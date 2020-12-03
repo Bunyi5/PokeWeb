@@ -1,6 +1,7 @@
 package com.example.pokeweb.model;
 
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,12 +17,15 @@ import javax.persistence.Id;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Pokemon {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @Column(name = "poke_name")
+    @EqualsAndHashCode.Include
     private String pokeName;
     private int height;
     private int weight;

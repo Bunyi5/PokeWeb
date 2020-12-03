@@ -22,4 +22,16 @@ public class PokemonService {
     public void saveNewPokemon(Pokemon pokemon) {
         pokemonRepository.save(pokemon);
     }
+
+    public void deletePokemon(Long id) {
+        pokemonRepository.deleteById(id);
+    }
+
+    public void updatePokemon(Pokemon pokemon) {
+        pokemonRepository.save(pokemon);
+    }
+
+    public boolean isPokemonExist(Long id) {
+        return pokemonRepository.existsById(id);
+    }
 }
